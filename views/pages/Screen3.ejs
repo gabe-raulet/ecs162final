@@ -1,14 +1,11 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title></title>
-        <script src="screen.js"></script>
+        <%- include ('../partials/head.ejs') %>
     </head>
-
     <body>
         <header>
-            UC Davis Lost and Found
+            <%- include ('../partials/header') %>
         </header>
         <div class="descriptive-input-class">
             <div class="text-box">
@@ -18,10 +15,10 @@
                 <input type="text" id="category" name="category"><br><br>
                 <label for="Description">Description</label>
                 <input type="text" id="description" name="description"><br><br>
-
                 <button class="btn" id="next">Next</button>
             </div>
         </div>
+        <script src="screen.js"></script>
     </body>
 </html>
 
