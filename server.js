@@ -17,7 +17,8 @@ LostAndFoundDB.get(cmd, function(err, val) {
 });
 
 function createLostAndFoundDB() {
-    const cmd = 'CREATE TABLE LAFTable ( ItemID INTEGER PRIMARY KEY, ItemType TEXT, Title TEXT, Category TEXT, Description TEXT, PhotoURL TEXT, Date TEXT, Time TEXT, Location TEXT)';
+    // const cmd = 'CREATE TABLE LAFTable ( ItemID INTEGER PRIMARY KEY, ItemType TEXT, Title TEXT, Category TEXT, Description TEXT, PhotoURL TEXT, Date TEXT, Time TEXT, Location TEXT)';
+    const cmd = 'CREATE TABLE LAFTable ( ItemType TEXT, Title TEXT, Category TEXT, Description TEXT, PhotoURL TEXT, Date TEXT, Time TEXT, Location TEXT)';
     LostAndFoundDB.run(cmd, function(err, val) {
         if (err) {
             console.log("Database creation failure", err.message);
@@ -42,10 +43,15 @@ app.get("/Screen4", function(request, response) {
 
 app.post("/newItem", function(request, response) {
     console.log("Server received", request.body);
-    // let date = request.body.date;
-    // let time = request.body.time;
-    // let loc  = request.body.location;
-    // console.log("date, ", date, "time, ", time, "loication, ", loc);
+    let cmd = "INSERT INTO LAFTable (ItemType, Title, Category, Description, Date, Time, Location) VALUES (?,?,?,?,?,?,?)";
+    LostAndFoundDB.run(cmd, "Found", request.body.title, request.body.category, request.body.description, request.body.date, request.body.time, request.body.location, function(err) {
+        if (err) {
+            console.log("There was an error inserting into the database");
+            console.log(err.message);
+        } else {
+            console.log("Item successfully inserted into the database");
+        }
+    });
 });
 
 var listener = app.listen(3000, function() {
