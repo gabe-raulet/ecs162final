@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/style.css">
+        <meta>
     </head>
 
     <body>
@@ -11,15 +16,24 @@
         </header>
         <div class="descriptive-input-class" id="descriptive-id">
 
-            <div class="text-box">
-                <label for="Title">Title</label>
-                <input type="text" id="title" name="title"><br><br>
-                <label for="Category">Category</label>
-                <input type="text" id="category" name="category"><br><br>
-                <label for="Description">Description</label>
-                <input type="text" id="description" name="description"><br><br>
-
-                <button class="btn" id="next">Next</button>
+            <div class="box">
+                <div class="input-pair">
+                    <label for="Title">Title</label>
+                    <textarea class='text-box' id="title" name="title"></textarea>
+                </div>
+                <div class="input-pair">
+                    <label for="Category">Category</label>
+                    <textarea class="text-box" id="category" name="category"></textarea>
+                </div>
+                <div class="input-pair">
+                    <label for="Description">Description</label>
+                    <textarea class="text-box" id="description" name="description"></textarea>
+                </div>
+                <div class="input-pair">
+                    <label for="photo">Attach a photo (optional)</label>
+                    <button class="btn" id="choose-file">Choose File</button>
+                </div>
+                    <button class="btn" id="next">Next</button>
             </div>
         </div>
         <script src="screen3.js"></script>
