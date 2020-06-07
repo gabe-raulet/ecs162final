@@ -1,22 +1,21 @@
 
 var nextButton = document.getElementById("next");
 
-if (nextButton != null) {
-    nextButton.addEventListener('click', () => {
-        window.location = "http://localhost:3000/Screen4";
-        // var xhr = new XMLHttpRequest();
-        // xhr.open("GET", "/Screen4", true);
-        // xhr.onloadend = function(e) {
-            // window.location = "http://localhost:3000/Screen4";
-        // }
-        // xhr.send();
-    });
-}
-
-
 let title       = document.getElementById("title");
 let category    = document.getElementById("category");
 let description = document.getElementById("description");
+
+nextButton.addEventListener("click", function() {
+    sessionStorage.setItem("savedTitle", title.value);
+    sessionStorage.setItem("savedCategory", category.value);
+    sessionStorage.setItem("savedDescription", description.value);
+    window.location = "http://localhost:3000/Screen4";
+});
+
+
+
+
+
 
 // let date        = document.getElementById("date");
 // let time        = document.getElementById("time");
