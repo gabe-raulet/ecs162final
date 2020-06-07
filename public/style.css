@@ -13,12 +13,33 @@ body {
     min-height: 100vh;
 }
 
-.descriptive-input-class {
+header {
+    display: flex;
+    flex-flow: column;
+
+}
+
+#ucdavis-logo {
+    align-self: center;
+    margin: 0px 0px 0px 175px;
+    max-width:200px;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
+
+.header-msg {
+    color: #142a50;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 15px;
+    min-width: 350px;
+}
+
 
 .box {
     /* background-color: red; */
