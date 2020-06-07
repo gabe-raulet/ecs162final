@@ -2,6 +2,7 @@
 const express = require("express");
 const sql = require("sqlite3").verbose();
 const path = require("path");
+const bodyParser = require('body-parser');
 
 const LostAndFoundDB = new sql.Database("LostAndFound.db");
 
@@ -28,29 +29,27 @@ function createLostAndFoundDB() {
 
 const app = express();
 
-app.set ('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
-var router = express.Router();
-
-router.get("/", function(request, response) {
-    response.render("pages/Screen3");
+app.get("/", function(request, response) {
+    response.sendFile(__dirname + '/public/Screen3.html');
 });
 
+app.get("/Screen4", function(request, response) {
+    response.sendFile(path.join(__dirname, '/public/Screen4.html'));
+});
 
-// app.get("/Screen3", function(request, response) {
-    // response.sendFile(__dirname + '/public/Screen3.html');
-// });
-
-// app.get("/Screen4", function(request, response) {
-    // response.sendFile(__dirname + '/public/Screen4.html');
-// });
-
-app.use('/', router);
+app.post("/newItem", function(request, response) {
+    console.log("Server received", request.body);
+    // let date = request.body.date;
+    // let time = request.body.time;
+    // let loc  = request.body.location;
+    // console.log("date, ", date, "time, ", time, "loication, ", loc);
+});
 
 var listener = app.listen(3000, function() {
     console.log("Your app is listening on port " + listener.address().port);
 });
+
 
