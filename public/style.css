@@ -68,6 +68,10 @@ header {
     padding: 1px 0px;
 }
 
+#same-line {
+
+}
+
 .text-box {
     background-color: #e5e5e5;
     min-width: 300px;
@@ -99,4 +103,17 @@ header {
     padding: 5px 15px;
     border-radius: 4px;
 }
+
+#submit {
+    align-self: flex-end;
+    color: white;
+    background-color: #daab27;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+
+
+
+
 

@@ -34,12 +34,19 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.get("/", function(request, response) {
+    response.sendFile(__dirname + '/public/Screen1.html');
+});
+
+
+app.get("/Screen3", function(request, response) {
     response.sendFile(__dirname + '/public/Screen3.html');
 });
 
 app.get("/Screen4", function(request, response) {
     response.sendFile(path.join(__dirname, '/public/Screen4.html'));
 });
+
+
 
 app.post("/newItem", function(request, response) {
     console.log("Server received", request.body);

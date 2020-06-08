@@ -2,20 +2,31 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/style.css">
     </head>
 
     <body>
         <header>
+            <img src="/images/Logo.png" id="ucdavis-logo">
         </header>
-
-        <div class="when-where-input-class" id="when-where-id">
-            <div class="text-box">
-                <label for="DateAndTime">Date &amp Time</label>
-                <input type="text" id="date" name="date">
-                <input type="text" id="time" name="time"><br><br>
-                <label for="Location">Location</label>
-                <input type="text" id="location" name="location"><br><br>
+        <div class="container">
+            <div class="header-msg">Input the found item</div>
+            <div class="box">
+                <div class="input-pair" id="same-line">
+                    <label for="Date">Date</label>
+                    <textarea class='text-box' id="date"></textarea>
+                </div>
+                <div class="input-pair">
+                    <label for="time">Time</label>
+                    <textarea class='text-box' id=time"></textarea>
+                </div>
+                <div class="input-pair">
+                    <label for="Location">Location</label>
+                    <textarea class='text-box' id=location"></textarea>
+                </div>
                 <button class="btn" id="submit">Submit</button>
             </div>
         </div>
