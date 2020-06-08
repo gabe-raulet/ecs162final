@@ -37,6 +37,9 @@ app.get("/", function(request, response) {
     response.sendFile(__dirname + '/public/Screen1.html');
 });
 
+app.get("/Screen2", function(request, response) {
+    response.sendFile(__dirname + '/public/Screen2.html');
+});
 
 app.get("/Screen3", function(request, response) {
     response.sendFile(__dirname + '/public/Screen3.html');
