@@ -49,6 +49,13 @@ app.get("/Screen4", function(request, response) {
     response.sendFile(path.join(__dirname, '/public/Screen4.html'));
 });
 
+app.get("/Screen6", function(request, response) {
+    response.sendFile(path.join(__dirname, '/public/Screen6.html'));
+});
+
+app.get("/Screen7", function(request, response) {
+    response.sendFile(path.join(__dirname, '/public/Screen7.html'));
+});
 
 
 app.post("/newItem", function(request, response) {
